@@ -309,3 +309,6 @@ PRODUCT_SHIPPING_API_LEVEL := 31
 
 # Inherit our proprietary vendor
 $(call inherit-product, vendor/xiaomi/yunluo/yunluo-vendor.mk)
+
+# VINTF: The android12-5.10 GKI kernel (kernel FCM 6) has no kernel entry in the Android 17 compatibility matrices
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
