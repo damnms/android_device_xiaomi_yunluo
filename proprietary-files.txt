@@ -834,7 +834,6 @@ vendor/etc/thermald-devices.conf
 vendor/bin/hw/tetheroffloadservice
 vendor/bin/conninfra_loader
 vendor/bin/netdagent
-vendor/bin/wlan_assistant
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
 vendor/etc/init/netdagent.rc

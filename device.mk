@@ -214,6 +214,7 @@ $(call soong_config_set,mediatek_gadget,use_custom_usb_gadget_rc,true)
 
 # Wifi
 PRODUCT_PACKAGES += \
+    wlan_assistant \
     android.hardware.wifi-service \
     wpa_supplicant \
     hostapd \
