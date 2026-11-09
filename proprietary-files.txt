@@ -177,8 +177,6 @@ vendor/lib64/libbluetooth_audio_session_mediatek.so
 vendor/lib64/libbluetooth_mtk.so
 vendor/lib64/libbluetooth_mtk_pure.so
 vendor/lib64/libbt-vendor.so
-vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
-vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
 # Camera
 vendor/bin/hw/mt6789/camerahalserver
@@ -647,7 +645,7 @@ vendor/lib64/libcodec2_soft_mtk_mp3dec.so
 vendor/lib64/libcodec2_soft_mtk_msadpcmdec.so
 vendor/lib64/libcodec2_vpp_qt_plugin.so
 vendor/lib64/libcodec2_vpp_rs_plugin.so
-vendor/lib64/libformatter.so
+vendor/lib64/libformatter.so;MODULE_SUFFIX=_mtk
 vendor/lib64/libmp3dec_mtk.so
 vendor/lib64/libmvpu_cic_ci_compiler.so
 vendor/lib64/libmvpu_clc_cl_compiler.so
@@ -841,8 +839,6 @@ vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
 vendor/etc/init/netdagent.rc
 vendor/etc/init/tetheroffloadservice.rc
-vendor/etc/init/wlan_assistant.rc
 vendor/lib64/libforkexecwrap.so
 vendor/lib64/libifcutils_mtk.so
 vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
-vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
