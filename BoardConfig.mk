@@ -195,5 +195,11 @@ WIFI_DRIVER_STATE_OFF := "0"
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 
+# The stock libwifi-hal-mtk.so fills wifi_hal_fn without the RTT v3/v4
+# entries added in Android 14 QPR2, so libwifi-hal-wrapper must use that
+# layout. Otherwise every slot after them is shifted by four and the
+# Wi-Fi HAL crashes on startup.
+$(call soong_config_set_bool,mediatek_wifi_hal,use_pre_u_qpr2_struct,true)
+
 # Inherit the proprietary version
 include vendor/xiaomi/yunluo/BoardConfigVendor.mk
