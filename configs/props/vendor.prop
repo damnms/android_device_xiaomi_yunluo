@@ -8,8 +8,6 @@ ro.vendor.have_aee_feature=0
 # Audio
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=2
-persist.audio.button_jack.profile=volume
-persist.audio.button_jack.switch=0
 persist.bluetooth.a2dp_offload.cap=sbc-aac
 persist.bluetooth.a2dp_offload.disabled=true
 persist.vendor.audio.misound.disable=true
@@ -139,7 +137,6 @@ persist.vendor.sensor.onetrack=true
 
 # Encryption
 ro.crypto.volume.filenames_mode=aes-256-cts
-ro.mtk_key_manager_support=1
 
 # Hardware
 ro.hardware.egl=meow
