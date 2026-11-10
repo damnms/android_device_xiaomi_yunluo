@@ -303,6 +303,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/xiaomi \
     hardware/google/interfaces \
     hardware/google/pixel \
+    hardware/google/pixel/pixelstats \
     hardware/google/pixel/power-libperfmgr
 
 # Shipping API Level
@@ -313,3 +314,7 @@ $(call inherit-product, vendor/xiaomi/yunluo/yunluo-vendor.mk)
 
 # VINTF: The android12-5.10 GKI kernel (kernel FCM 6) has no kernel entry in the Android 17 compatibility matrices
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
+
+# tinyxml2 10.0.0 fuer MTK-Blobs (Audio, PQ, Kamera)
+PRODUCT_PACKAGES += \
+    libtinyxml2-v10

@@ -109,7 +109,8 @@ blob_fixups: blob_fixups_user_type = {
     "vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so": blob_fixup()
     .patchelf_version(patchelf_version)
     .add_needed("libshim_sensors.so")
-    .replace_needed("libutils.so", "libutils-v32.so"),
+    .replace_needed("libutils.so", "libutils-v32.so")
+    .replace_needed("libtinyxml2.so", "libtinyxml2-v10.so"),
     (
     "vendor/lib64/libnvram.so",
     "vendor/lib64/libtflite_mtk.so",
@@ -118,6 +119,13 @@ blob_fixups: blob_fixups_user_type = {
     .add_needed('libbase_shim.so'),
     "vendor/lib64/hw/hwcomposer.mtk_common.so": blob_fixup()
     .add_needed('libprocessgroup_shim.so'),
+    (
+        "vendor/lib64/hw/audio.primary.mediatek.so",
+        "vendor/lib64/librt_extamp_intf.so",
+        "vendor/lib64/libmorpho.photosolid.so",
+    ): blob_fixup()
+    .patchelf_version(patchelf_version)
+    .replace_needed("libtinyxml2.so", "libtinyxml2-v10.so"),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
