@@ -1,0 +1,4 @@
+# The camera HAL looks up jpeg.exif.icc.profile, which is unset and maps
+# to default_prop. Vendor domains may not read default_prop, so silence
+# the lookup.
+dontaudit mtk_hal_camera default_prop:file read;
