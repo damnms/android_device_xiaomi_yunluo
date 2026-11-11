@@ -1,0 +1,4 @@
+# The video encoder (venc_srv) looks up the test properties vilte.test,
+# prepend.test and gce.test, which are unset and map to default_prop.
+# Vendor domains may not read default_prop, so silence the lookup.
+dontaudit vpud_native default_prop:file read;
