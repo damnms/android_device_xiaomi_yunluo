@@ -110,7 +110,7 @@ blob_fixups: blob_fixups_user_type = {
     .patchelf_version(patchelf_version)
     .add_needed("libshim_sensors.so")
     .replace_needed("libutils.so", "libutils-v32.so")
-    .replace_needed("libtinyxml2.so", "libtinyxml2-v10.so"),
+    .replace_needed("libtinyxml2.so", "libtinyxml2-v34.so"),
     (
     "vendor/lib64/libnvram.so",
     "vendor/lib64/libtflite_mtk.so",
@@ -125,7 +125,7 @@ blob_fixups: blob_fixups_user_type = {
         "vendor/lib64/libmorpho.photosolid.so",
     ): blob_fixup()
     .patchelf_version(patchelf_version)
-    .replace_needed("libtinyxml2.so", "libtinyxml2-v10.so"),
+    .replace_needed("libtinyxml2.so", "libtinyxml2-v34.so"),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
