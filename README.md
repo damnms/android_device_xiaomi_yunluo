@@ -19,3 +19,10 @@
 - **tinyxml2:** the platform `libtinyxml2` is no longer ABI-compatible
   with the Android 14 MediaTek blobs. `extract-files.py` relinks them
   against `libtinyxml2-v34` from `hardware/lineage/compat`.
+- **Video decoder on the 3 GB model:** `mtk-vcu.ko` allocates a 123 KB
+  queue with `kzalloc()` for every new decoder. After some hours of use
+  physical memory is too fragmented for that, the decoder init fails
+  ("Allocate new vcu queue fail!") and videos stop playing in all apps
+  until a reboot. `device/xiaomi/yunluo-kernel` therefore carries a
+  rebuilt `mtk-vcu.ko` that uses `kvzalloc()`; the patch is in
+  `yunluo-kernel/patches/`.
