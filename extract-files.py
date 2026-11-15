@@ -119,8 +119,11 @@ blob_fixups: blob_fixups_user_type = {
     .add_needed('libbase_shim.so'),
     "vendor/lib64/hw/hwcomposer.mtk_common.so": blob_fixup()
     .add_needed('libprocessgroup_shim.so'),
+    "vendor/lib64/hw/audio.primary.mediatek.so": blob_fixup()
+    .patchelf_version(patchelf_version)
+    .replace_needed("libalsautils.so", "libalsautils-v34.so")
+    .replace_needed("libtinyxml2.so", "libtinyxml2-v34.so"),
     (
-        "vendor/lib64/hw/audio.primary.mediatek.so",
         "vendor/lib64/librt_extamp_intf.so",
         "vendor/lib64/libmorpho.photosolid.so",
     ): blob_fixup()

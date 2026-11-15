@@ -26,3 +26,11 @@
   until a reboot. `device/xiaomi/yunluo-kernel` therefore carries a
   rebuilt `mtk-vcu.ko` that uses `kvzalloc()`; the patch is in
   `yunluo-kernel/patches/`.
+- **USB audio:** the stock `audio.primary.mediatek.so` (Android 14)
+  reads USB audio devices through `libalsautils`. Since Android 14 QPR3
+  (AOSP `79e3f23d`), `alsa_device_profile` has an extra field
+  (`extra_latency_ms`) after `direction`, so the blob and the platform
+  library disagree on the struct layout: the profile reads as invalid
+  and USB headsets stay silent. `libalsautils-v34/` builds the
+  `android14-release` version of `system/media/alsa_utils`, and
+  `extract-files.py` links the audio HAL against it.
