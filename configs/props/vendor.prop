@@ -55,6 +55,11 @@ vendor.camera.mdp.dre.enable=1
 ro.vendor.camera.isp.support.colorspace=0
 ro.vendor.camera3.zsl.default=260
 vendor.mtk.camera.app.fd.video=1
+# Video streams that go through the GPU (CameraX) are not detected as
+# video, so from 1080p on the HAL picks the capture mode, where AE stays
+# at ISO 231. The video mode uses the same sensor setting and keeps AE
+# working.
+vendor.debug.cameng.force_sensormode=2
 
 # Connectivity
 persist.vendor.connsys.chipid=-1

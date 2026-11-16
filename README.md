@@ -34,3 +34,12 @@
   and USB headsets stay silent. `libalsautils-v34/` builds the
   `android14-release` version of `system/media/alsa_utils`, and
   `extract-files.py` links the audio HAL against it.
+- **Dark video from 1080p on:** apps that record through a GPU surface
+  (CameraX, e.g. Aperture) do not mark their stream as a video encoder
+  consumer. The MediaTek HAL then treats a stream larger than the binned
+  preview mode (1632x1224) as a still capture and picks the capture
+  sensor mode, in which auto exposure stays at ISO 231 while streaming.
+  `vendor.prop` sets `vendor.debug.cameng.force_sensormode=2`, so every
+  session uses the normal video mode. In the `gc08a3` driver it has the
+  same sensor setting as the capture mode (3264x2448, 30 fps), so photos
+  keep their full resolution.
