@@ -43,3 +43,10 @@
   session uses the normal video mode. In the `gc08a3` driver it has the
   same sensor setting as the capture mode (3264x2448, 30 fps), so photos
   keep their full resolution.
+- **OTA updates:** `system_ext.prop` sets `lineage.updater.uri` to
+  `yunluo.json` in the main branch of
+  [android_releases_yunluo](https://github.com/damnms/android_releases_yunluo).
+  The LineageOS Updater reads that list (API v2 format) and downloads the
+  zip from the GitHub release. Each release adds an entry with the
+  build's `ro.build.date.utc` as `datetime`, `type` `unofficial`, and the
+  zip's name, size, sha256 and download URL.
