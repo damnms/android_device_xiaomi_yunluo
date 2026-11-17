@@ -42,7 +42,10 @@
   `vendor.prop` sets `vendor.debug.cameng.force_sensormode=2`, so every
   session uses the normal video mode. In the `gc08a3` driver it has the
   same sensor setting as the capture mode (3264x2448, 30 fps), so photos
-  keep their full resolution.
+  keep their full resolution. `vendor_init` needs
+  `set_prop` on `vendor_mtk_emcamera_prop` to set it at boot
+  (`sepolicy/vendor/vendor_init.te`); without the rule the property stays
+  empty.
 - **OTA updates:** `system_ext.prop` sets `lineage.updater.uri` to
   `yunluo.json` in the main branch of
   [android_releases_yunluo](https://github.com/damnms/android_releases_yunluo).

@@ -1,1 +1,4 @@
 set_prop(vendor_init, vendor_displayfeature_prop)
+
+# Camera: vendor.prop sets vendor.debug.cameng.force_sensormode (dark video fix)
+set_prop(vendor_init, vendor_mtk_emcamera_prop)
